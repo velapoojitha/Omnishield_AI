@@ -1,5 +1,13 @@
 # 🔐 OmniShield_AI
 
+## 🎥 Project Demo
+
+Watch the full working demo here:
+
+👉 **[Click here to watch OmniShieldAI Demo]( https://1drv.ms/v/c/64673a201db65afa/IQD6D9ayiA_nS7scCtVRxrUWAS2Qr3IlQLZ8wGjLOcPPh6M?e=554Now
+)**
+
+
 ## AI-Powered Smart Surveillance & Intrusion Detection System
 
 OmniShieldAI is an intelligent, AI-driven real-time surveillance system designed to detect unauthorized access using deep learning and computer vision. Built with YOLOv8 and Flask, the system performs live object detection, captures breach evidence, logs events securely, and provides an administrative audit dashboard for monitoring and analysis.
