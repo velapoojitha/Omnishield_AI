@@ -1,104 +1,205 @@
-A **README.md** file is the face of my project. 
+# 🔐 OmniShieldAI
 
-Since iam the **Lead Architect**, this file is written to showcase my skills and the advanced nature of **OmniShield AI**.
+## AI-Powered Smart Surveillance & Intrusion Detection System
 
+OmniShieldAI is an intelligent, AI-driven real-time surveillance system designed to detect unauthorized access using deep learning and computer vision. Built with YOLOv8 and Flask, the system performs live object detection, captures breach evidence, logs events securely, and provides an administrative audit dashboard for monitoring and analysis.
 
-# OMNISHIELD AI: Advanced Security Ecosystem
+This project demonstrates the integration of AI, backend engineering, database systems, and web-based security management into a production-style application.
 
-**Lead Architect:** Vela Poojitha
+---
 
-**Version:** 1.0.0 (Production Ready)
+## 🚀 Key Features
 
-OmniShield AI is a comprehensive, multi-threaded security solution that integrates **Real-Time Computer Vision** with a **Professional Web-Based Command Center**. It utilizes the YOLOv8 architecture for object detection and DeepFace for biometric verification, providing a seamless bridge between physical security and digital monitoring.
+* 🎥 Real-Time Object Detection using YOLOv8
+* 🚨 Intrusion Detection & Automated Alert Trigger
+* 📸 Evidence Capture & Storage on Breach
+* 🔐 Secure Login & Admin Authentication
+* 📊 Web-Based Audit Dashboard
+* 🗄 SQLite-Based Secure Event Logging
+* 🔊 Alarm/Siren Trigger System
+* 🧠 AI Engine + Flask Backend Integration
+* 📁 Authorized User Verification Mechanism
 
+---
 
-##  Core Features
+## 🧠 AI & Detection Engine
 
-**Intelligent Zone Monitoring**: Interactive setup allowing users to draw custom "Restricted Zones" on the live feed.
-**Dual-Layer Biometric Auth**: Automatically distinguishes between authorized personnel (Vela Poojitha) and unknown intruders.
-**Multi-Channel Alerts**: Instant notifications via **Telegram Bot API**, **Email (SMTP)**, and **Local Audio Siren**.
-**Live Audit Dashboard**: A professional Flask-based web interface with real-time log updates and evidence viewing.
-**Session-Based Security**: Protected login system with an icon-only professional PIN toggle.
+OmniShieldAI integrates the **YOLOv8 (Small Variant)** model via the Ultralytics framework for high-speed real-time object detection.
 
+Detection Pipeline:
 
-## System Architecture
+1. Live video stream captured via OpenCV
+2. Frame-by-frame AI inference using YOLOv8
+3. Unauthorized detection logic applied
+4. Evidence image captured
+5. Event logged in SQLite database
+6. Siren triggered for intrusion alert
+7. Breach record displayed in audit dashboard
 
-The project is split into two synchronized processes:
+Model file required:
 
-1. **Vision Engine**: Handles the camera feed, AI processing, and database writing.
-2. **Command Center (Dashboard)**: A Flask server that reads from the database and serves the UI.
+* `yolov8s.pt` (Download separately – not included due to size limits)
 
+---
 
+## 🛠 Tech Stack
 
-## Project Structure
+### 🔹 Backend
 
-OMNISHIELD_AI/
-├── authorized_users/     # Reference photos for Face Recognition
-├── static/
-│   ├── captures/         # Real-time evidence snapshots
-│   └── (images)          # Professional backgrounds (bg1, loginbg)
-├── templates/
-│   ├── login.html        # Secure Entry Portal
-│   ├── index.html        # Main Command Center
-│   └── audit.html        # Forensic Log Viewer
-├── venv/                 # Python Virtual Environment
-├── dashboard.py          # Flask Web Server Logic
-├── vision_engine.py      # YOLOv8 & Alert Logic
-├── security_archive.db   # Shared SQLite Database
-├── run_system.bat        # Master One-Click Launcher
-└── requirements.txt      # Dependency List
+* Python
+* Flask
 
+### 🔹 AI / Computer Vision
 
+* Ultralytics YOLOv8
+* OpenCV
 
-## Installation & Setup
+### 🔹 Frontend
 
-### 1. Prerequisites
+* HTML
+* Jinja2 Templates
+* CSS (Static Assets)
 
-* Python 3.10 or 3.11 installed.
-* A webcam connected to the system.
+### 🔹 Database
 
-### 2. Environment Setup
+* SQLite
 
-Open the terminal in the project folder and run:
+### 🔹 System Utilities
 
-# Create and activate virtual environment
+* Batch Script Automation
+* Media Alert System
+* File-Based Evidence Storage
+
+---
+
+## 📂 Project Structure
+
+```
+OmniShieldAI/
+│
+├── dashboard.py              # Flask web server & routing
+├── vision_engine.py          # AI detection engine
+├── requirements.txt
+├── README.md
+├── run_system.bat
+│
+├── templates/                # Web templates
+│   ├── index.html
+│   ├── login.html
+│   └── audit.html
+│
+├── static/                   # CSS, JS, media assets
+│
+├── authorized_users/         # Authorized user storage (excluded in repo)
+├── breach_reports/           # Captured breach evidence (excluded in repo)
+│
+└── .gitignore
+```
+
+---
+
+## ⚙ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/velapoojitha/OmniShieldAI.git
+cd OmniShieldAI
+```
+
+### 2️⃣ Create Virtual Environment
+
+```bash
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate   # Windows
+```
 
-# Install all dependencies
+### 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+### 4️⃣ Download YOLOv8 Model
 
-### 3. Configuration
+Download `yolov8s.pt` from:
 
-* Update `TOKEN` and `CHAT_ID` in `vision_engine.py` with your Telegram Bot details.
-* Update `SENDER_EMAIL` and `SENDER_PASSWORD` for Email alerts.
-* Place a clear photo of yourself in the `authorized_users/` folder.
+[https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 
+Place the file inside the project root directory.
 
+### 5️⃣ Run the Application
 
-## Usage
+```bash
+python dashboard.py
+```
 
-1. **Launch**: Double-click the `run_system.bat` file on your desktop.
-2. **Configure Zone**: Use the mouse to draw a box over the area you want to protect in the "SETUP" window. Press **'S'** to start.
-3. **Access Dashboard**: Open your browser to `http://127.0.0.1:5000`.
-4. **Monitor**: View the **Audit Center** to see live logs appearing as the AI detects activity.
+Open in browser:
 
+```
+http://127.0.0.1:5000
+```
 
+---
 
-## Security Disclaimer
+## 🔐 Security Workflow
 
-This system is intended for educational and private monitoring purposes. Ensure compliance with local privacy laws regarding video surveillance.
+1. System monitors live camera feed
+2. Detects unauthorized individual
+3. Captures evidence image
+4. Logs timestamp & event in database
+5. Stores evidence in breach_reports folder
+6. Triggers siren alert
+7. Displays event inside audit dashboard
 
-**Developed by Vela Poojitha**
+---
 
+## 📊 Database Structure
 
-### **Final Project Checklist**
+The SQLite database stores:
 
-* AI Detection (YOLOv8)
-* Face Verification (DeepFace)
-* Database Logging (SQLite)
-* Web Dashboard (Flask)
-* Professional README
-* One-Click Launcher
+* Event ID
+* Timestamp
+* Detection Type
+* Evidence Image Path
+* Authorization Status
 
+This ensures complete traceability of intrusion events.
+
+---
+
+## 📌 Future Enhancements
+
+* Face Recognition Integration
+* Email/SMS Real-Time Alert System
+* Cloud Deployment (AWS / Azure)
+* Docker Containerization
+* Role-Based Multi-Admin Authentication
+* Real-Time Analytics Dashboard
+* Cloud Database Migration
+
+---
+
+## 🏆 Why This Project Matters
+
+OmniShieldAI demonstrates:
+
+* Real-time AI system design
+* Deep learning model integration
+* Backend + frontend system architecture
+* Database-driven security logging
+* Production-style application structure
+* Practical AI deployment workflow
+
+This project reflects strong capabilities in AI engineering, backend development, and intelligent system design.
+
+---
+
+## 👩‍💻 Author
+
+**Vela Poojitha**
+M.Tech Computer Science & Engineering
+AI & Web Developer
+Passionate about intelligent security systems and AI-driven automation.
+
+---
