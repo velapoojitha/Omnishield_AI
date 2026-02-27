@@ -1,4 +1,4 @@
-# 🔐 OmniShieldAI
+# 🔐 OmniShield_AI
 
 ## AI-Powered Smart Surveillance & Intrusion Detection System
 
@@ -75,7 +75,7 @@ Model file required:
 ## 📂 Project Structure
 
 ```
-OmniShieldAI/
+OmniShield_AI/
 │
 ├── dashboard.py              # Flask web server & routing
 ├── vision_engine.py          # AI detection engine
@@ -103,8 +103,8 @@ OmniShieldAI/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/velapoojitha/OmniShieldAI.git
-cd OmniShieldAI
+git clone https://github.com/velapoojitha/OmniShield_AI.git
+cd OmniShield_AI
 ```
 
 ### 2️⃣ Create Virtual Environment
