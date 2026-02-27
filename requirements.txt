@@ -1,0 +1,17 @@
+# Core Web Framework
+Flask==3.0.0
+
+# Computer Vision & AI
+opencv-python
+ultralytics
+deepface
+tf-keras
+tensorflow
+
+# Hardware & Alerts
+pyttsx3
+pygame
+requests
+
+# Database
+Flask-SQLAlchemy
